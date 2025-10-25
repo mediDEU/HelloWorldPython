@@ -19,15 +19,56 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
+      - name: Debug: environment info
         run: |
-          python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          echo "=== which/python/version ==="
+          which python || true
+          which python3 || true
+          python --version || python3 --version || true
+          echo "=== PATH ==="
+          echo "$PATH"
+          echo "=== repo root listing ==="
+          ls -la
+
+      - name: Install dependencies (robust)
+        run: |
+          # prefer the 'python' from setup-python but fall back to python3
+          if command -v python >/dev/null 2>&1; then
+            PY=python
+          else
+            PY=python3
+          fi
+          $PY -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then
+            $PY -m pip install -r requirements.txt
+          else
+            $PY -m pip install pytest
+          fi
+          echo "=== pip list ==="
+          $PY -m pip list
+
+      - name: Verify pytest installation
+        run: |
+          if command -v python >/dev/null 2>&1; then
+            python -m pip show pytest || true
+            python -m pytest --version || true
+          else
+            python3 -m pip show pytest || true
+            python3 -m pytest --version || true
+          fi
 
       - name: Run tests
         run: |
-          pytest -q
+          if command -v python >/dev/null 2>&1; then
+            python -m pytest -q
+          else
+            python3 -m pytest -q
+          fi
 
       - name: Run Hello World script
         run: |
-          python hello.py
+          if command -v python >/dev/null 2>&1; then
+            python src/hello.py
+          else
+            python3 src/hello.py
+          fi
