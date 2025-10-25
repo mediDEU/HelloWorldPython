@@ -1,9 +1,8 @@
-from math import *
-import os,sys
+from math import 
 
-def badFunction():
-    x=1+2 
-    long_line = "This is a very long string intended to exceed the typical 79 character line length limit used by many linters and style guides."  # noqa: E501
-    unused_var = 42
+
+def bad_Function():
+    x= 1 + 2 
+    long_line = "This is a very long string intended"  
     print("Hello, wwwww!")  
     return x
