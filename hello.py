@@ -1,6 +1,6 @@
 def greet() -> str:
     """Return a greeting string."""
-    return "Hello, World!"
+    return "Hello, Frankfurt!"
 
 
 if __name__ == "__main__":

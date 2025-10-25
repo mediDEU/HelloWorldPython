@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ dev ]
   pull_request:
-    branches: [ main ]
+    branches: [ dev ]
 
 jobs:
   build:
@@ -68,7 +68,7 @@ jobs:
       - name: Run Hello World script
         run: |
           if command -v python >/dev/null 2>&1; then
-            python hello.py
+            python bad_style.py
           else
-            python3 src/hello.py
+            python3 bad_style.py
           fi
