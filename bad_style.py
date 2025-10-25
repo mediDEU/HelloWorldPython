@@ -1,5 +1,5 @@
-def add_and_greet ():
-    x = 1 + 2
-    return x
-    print("Hello, wwwww!")
+def add_and_greet():
+   print("Hello, wwwww!")
+   x = 1 + 2
+   return x
   
