@@ -30,4 +30,4 @@ jobs:
 
       - name: Run Hello World script
         run: |
-          python src/hello.py
+          python hello.py
