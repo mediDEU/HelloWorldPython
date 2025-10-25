@@ -68,7 +68,7 @@ jobs:
       - name: Run Hello World script
         run: |
           if command -v python >/dev/null 2>&1; then
-            python src/hello.py
+            python hello.py
           else
             python3 src/hello.py
           fi
