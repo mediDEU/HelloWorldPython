@@ -1,4 +1,4 @@
-from src.hello import greet
+from hello import greet
 
 
 def test_greet():
