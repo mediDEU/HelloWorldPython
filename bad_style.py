@@ -1,6 +1,5 @@
-
-
-def bad_function():
+def add_and_greet ():
     x = 1 + 2
-    print("Hello, wwwww!")
     return x
+    print("Hello, wwwww!")
+  
