@@ -1,5 +1,4 @@
-from math import 
-
+ import math
 
 def bad_Function():
     x= 1 + 2 
