@@ -1,5 +1,5 @@
-def add_and_greet():
+def ertertert():
      print("Hello, world!")
-     x = 1 + 2
+     x =1+2
      return x
   
